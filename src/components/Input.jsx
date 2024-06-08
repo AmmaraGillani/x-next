@@ -70,7 +70,7 @@ export default function Input() {
         const docRef = await addDoc(collection(db, 'posts'),
     {
         uid:session.user.uid,
-        user:session.user.username,
+        username:session.user.username,
         name:session.user.name,
         text,
         profileImg:session.user.image,
@@ -81,6 +81,7 @@ export default function Input() {
     setText('');
     setImageFileUrl(null);
     setSelectedFile(null);
+    location.reload();
     };
 
         if (!session) return null;
